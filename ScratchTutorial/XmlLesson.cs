@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace ScratchTutorial
 {
     public class XmlLesson : ILessonReader
     {
+        const string Extension = ".xml";
         private int testCount;
 
         public XmlLesson()
@@ -28,8 +30,12 @@ namespace ScratchTutorial
 
         public string ReadTitle(string lessonPath)
         {
-            ++this.testCount;
-            return "Тестовый заголовок. Обращение #" + this.testCount;
+            if (!File.Exists(lessonPath))
+                throw new FileNotFoundException(lessonPath);
+            var name = Path.GetFileName(lessonPath).ToLower();
+            if (!name.EndsWith(Extension))
+                throw new Exception("Ожидался файл XML");
+            return name.Substring(0, name.Length - Extension.Length + 1);
         }
     }
 }
