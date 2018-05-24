@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using AppResources = ScratchTutorial.Properties.Resources;
 
 namespace ScratchTutorial.Gui
@@ -13,7 +14,8 @@ namespace ScratchTutorial.Gui
         public LessonExplorer()
         {
             InitializeComponent();
-            this.storage = LessonStorage.Create(AppResources.PathLessons, new XmlLesson());
+            this.storage = LessonStorage.Create(
+                Path.GetFullPath(AppResources.PathLessons), new XmlLesson());
             this.lbLessons.ItemsSource = this.storage.Titles;
         }
 
@@ -21,6 +23,16 @@ namespace ScratchTutorial.Gui
         {
             this.tbDescription.Text = this.storage.GetDescription(
                 this.lbLessons.SelectedItem.ToString());
+            this.btnOk.IsEnabled = true;
+        }
+
+        private void SelectLesson(object sender, RoutedEventArgs e)
+        {
+            var viewer = new LessonViewer(
+                this.storage.LoadLesson(this.lbLessons.SelectedItem.ToString()));
+            this.Hide();
+            viewer.ShowDialog();
+            this.Show();
         }
     }
 }

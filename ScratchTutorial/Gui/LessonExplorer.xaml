@@ -8,8 +8,8 @@
         Title="LessonWindow" SizeToContent="WidthAndHeight">
     <DockPanel Height="300" Width="300" Margin="10">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button x:Name="btnOk" Width="60" Height="25" Margin="0,0,10,0" Content="Выбрать"/>
-            <Button x:Name="btnBck" Width="60" Height="25" Content="Назад"/>
+            <Button x:Name="btnOk" Width="60" Height="25" Margin="0,0,10,0" Content="Выбрать" IsEnabled="False" Click="SelectLesson"/>
+            <Button x:Name="btnBack" Width="60" Height="25" Content="Назад"/>
         </StackPanel>
         <Grid Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
