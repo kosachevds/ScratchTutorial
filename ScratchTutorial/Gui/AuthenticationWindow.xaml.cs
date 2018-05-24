@@ -13,6 +13,10 @@ namespace ScratchTutorial.Gui
         {
             InitializeComponent();
             this.authenticator = authenticator;
+            #if (DEBUG)
+            this.tbLogin.Text = "username";
+            this.pbPassword.Password = "password";
+            #endif
         }
 
         private void Login(object sender, RoutedEventArgs e)
