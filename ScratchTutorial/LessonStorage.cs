@@ -2,73 +2,38 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
+using System.Windows;
 
 namespace ScratchTutorial
 {
-    public class LessonStorage
+    public class LessonStorage : Storage
     {
-        private string path;
-        private ILessonReader reader;
-        private List<string> titles;
-        private Dictionary<string, string> descriptions;
         private Dictionary<string, Lesson> lessons;
 
-        private LessonStorage(string path, ILessonReader reader)
+        public LessonStorage(string path, ILessonReader reader) : base(path, reader)
         {
-            this.reader = reader;
-            this.path = path;
-            this.titles = new List<string>();
-            this.descriptions = new Dictionary<string, string>();
             this.lessons = new Dictionary<string, Lesson>();
             CurrentLesson = null;
         }
 
-        public ReadOnlyCollection<string> Titles { get { return this.titles.AsReadOnly(); } }
-
         public Lesson CurrentLesson { get; private set; }
 
-        public static LessonStorage Create(string path, ILessonReader reader)
+        public override Window Load(string title)
         {
-            var storage = new LessonStorage(path, reader);
-            foreach (var lesson in Directory.GetDirectories(path))
-            {
-                storage.titles.Add(reader.ReadTitle(lesson));
-            }
-            return storage;
-        }
-
-        public string GetDescription(string title)
-        {
-            if (this.descriptions.ContainsKey(title))
-                return this.descriptions[title];
-            string description = null;
-            foreach (var lesson in Directory.GetDirectories(this.path))
-            {
-                if (this.reader.ReadTitle(lesson).Equals(title))
-                {
-                    description = this.reader.ReadDescription(lesson);
-                    break;
-                }
-            }
-            if (description == null)
-            {
-                throw new ArgumentException("Invalid lesson's title");
-            }
-            this.descriptions.Add(title, description);
-            return description;
+            throw new NotImplementedException();
         }
 
         public Lesson LoadLesson(string title)
         {
             if (this.lessons.ContainsKey(title))
                 return CurrentLesson = this.lessons[title];
+            var reader = (ILessonReader)this.Reader;
             Lesson lesson = null;
-            foreach (var lessonDir in Directory.GetDirectories(this.path))
+            foreach (var lessonDir in Directory.GetDirectories(this.Path))
             {
-                if (this.reader.ReadTitle(lessonDir).Equals(title))
+                if (this.Reader.ReadTitle(lessonDir).Equals(title))
                 {
-                    lesson = this.reader.ReadLesson(lessonDir);
+                    lesson = reader.ReadLesson(lessonDir);
                     break;
                 }
             }

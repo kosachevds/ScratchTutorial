@@ -1,14 +1,14 @@
-﻿<Window x:Class="ScratchTutorial.Gui.LessonExplorer"
+﻿<Window x:Class="ScratchTutorial.Gui.Explorer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ScratchTutorial"
+        xmlns:local="clr-namespace:ScratchTutorial.Gui"
         mc:Ignorable="d"
-        Title="LessonWindow" SizeToContent="WidthAndHeight">
-    <DockPanel Height="300" Width="300" Margin="10">
+        Title="Explorer" SizeToContent="WidthAndHeight">
+    <DockPanel Height="500" Width="600" Margin="10">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button x:Name="btnOk" Width="60" Height="25" Margin="0,0,10,0" Content="Выбрать" IsEnabled="False" Click="SelectLesson"/>
+            <Button x:Name="btnOk" Width="60" Height="25" Margin="0,0,10,0" Content="Выбрать" IsEnabled="False" Click="Select"/>
             <Button x:Name="btnBack" Width="60" Height="25" Content="Назад"/>
         </StackPanel>
         <Grid Margin="0,0,0,10">
@@ -16,7 +16,7 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="lbLessons" Grid.Column="0" SelectionChanged="lbLessons_SelectionChanged"/>
+            <ListBox x:Name="lbTitles" Grid.Column="0" SelectionChanged="TitleChanged"/>
             <TextBlock x:Name="tbDescription" Grid.Column="1" TextWrapping="Wrap"/>
         </Grid>
     </DockPanel>

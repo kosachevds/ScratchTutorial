@@ -65,17 +65,18 @@
     </ApplicationDefinition>
     <Compile Include="ArrayExtensions.cs" />
     <Compile Include="Gui\ErrorBox.cs" />
+    <Compile Include="Gui\Explorer.xaml.cs">
+      <DependentUpon>Explorer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gui\LessonViewer.xaml.cs">
       <DependentUpon>LessonViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="IAuthenticator.cs" />
+    <Compile Include="IHeaderReader.cs" />
     <Compile Include="ILessonReader.cs" />
     <Compile Include="IRegistrator.cs" />
     <Compile Include="DBRegistrator.cs" />
     <Compile Include="DBAuthenticator.cs" />
-    <Compile Include="Gui\LessonExplorer.xaml.cs">
-      <DependentUpon>LessonExplorer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Lesson.cs" />
     <Compile Include="LessonStorage.cs" />
     <Compile Include="Paragraph.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Gui\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Storage.cs" />
     <Compile Include="Testing.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="UserData.cs" />
@@ -92,7 +94,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gui\LessonExplorer.xaml">
+    <Page Include="Gui\Explorer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
+using AppResources = ScratchTutorial.Properties.Resources;
 
 namespace ScratchTutorial.Gui
 {
@@ -26,7 +28,7 @@ namespace ScratchTutorial.Gui
         {
             window.Owner = this;
             window.ShowDialog();
-            new LessonExplorer().Show();
+            new Explorer(new LessonStorage(Path.GetFullPath(AppResources.PathLessons), new XmlLesson())).Show();
         }
     }
 }

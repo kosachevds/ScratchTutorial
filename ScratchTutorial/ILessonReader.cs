@@ -1,9 +1,7 @@
 ﻿namespace ScratchTutorial
 {
-    public interface ILessonReader
+    public interface ILessonReader : IHeaderReader
     {
-        string ReadTitle(string lessonPath);
-        string ReadDescription(string lessonPath);
         Lesson ReadLesson(string lessonPath);
     }
 }
