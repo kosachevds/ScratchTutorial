@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ArrayExtensions.cs" />
     <Compile Include="Gui\ErrorBox.cs" />
     <Compile Include="Gui\LessonViewer.xaml.cs">
       <DependentUpon>LessonViewer.xaml</DependentUpon>
@@ -78,10 +79,12 @@
     <Compile Include="Lesson.cs" />
     <Compile Include="LessonStorage.cs" />
     <Compile Include="Paragraph.cs" />
+    <Compile Include="Question.cs" />
     <Compile Include="RegistrationException.cs" />
     <Compile Include="Gui\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Testing.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="UserData.cs" />
     <Compile Include="XmlLesson.cs" />
