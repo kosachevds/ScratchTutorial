@@ -64,6 +64,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ArrayExtensions.cs" />
+    <Compile Include="Data\LessonStatistic.cs" />
+    <Compile Include="Data\TestStatistic.cs" />
     <Compile Include="Gui\ErrorBox.cs" />
     <Compile Include="Gui\Explorer.xaml.cs">
       <DependentUpon>Explorer.xaml</DependentUpon>
@@ -95,7 +97,7 @@
     <Compile Include="Storage.cs" />
     <Compile Include="Testing.cs" />
     <Compile Include="TestStorage.cs" />
-    <Compile Include="Data\UserContext.cs" />
+    <Compile Include="Data\DbContext.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="XmlHeaderReader.cs" />
     <Compile Include="XmlLesson.cs" />
