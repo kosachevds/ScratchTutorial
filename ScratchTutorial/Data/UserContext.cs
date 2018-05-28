@@ -1,11 +1,11 @@
 ﻿using System.Data.Entity;
 
-namespace ScratchTutorial
+namespace ScratchTutorial.Data
 {
     class UserContext : DbContext
     {
         public UserContext() : base("DbConnection") { }
 
-        public DbSet<UserData> Users { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ScratchTutorial
+namespace ScratchTutorial.Data
 {
-    public class UserData
+    public class User
     {
         private const string Space = " ";
 

@@ -2,6 +2,7 @@
 using ScratchTutorial.Properties;
 using System.Linq;
 using System.Text.RegularExpressions;
+using ScratchTutorial.Data;
 
 namespace ScratchTutorial
 {
@@ -14,7 +15,7 @@ namespace ScratchTutorial
 
         public void Registrate(string username, string password)
         {
-            username = UserData.PrepareUsername(username);
+            username = User.PrepareUsername(username);
             using (context = new UserContext())
             {
                 if (!UsernameIsValid(username))
@@ -23,8 +24,8 @@ namespace ScratchTutorial
                     throw new RegistrationException(Resources.ErrorShortPassword);
                 if (context.Users.Any(u => u.Username.Equals(username)))
                     throw new RegistrationException(Resources.ErrorAlreadyExists);
-                password = UserData.PreparePassword(password);
-                context.Users.Add(new UserData { Username = username, Password = password });
+                password = User.PreparePassword(password);
+                context.Users.Add(new User { Username = username, Password = password });
                 context.SaveChanges();
             }
         }
