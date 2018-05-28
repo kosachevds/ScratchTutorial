@@ -7,10 +7,10 @@ namespace ScratchTutorial.Data
     {
         [Key]
         public int Id { get; set; }
-        
-        public string Title { get; set; }
 
-        public string Login { get; set; }
+        public string Username { get; set; }
+
+        public string Title { get; set; }
 
         public TimeSpan Time { get; set; }
     }

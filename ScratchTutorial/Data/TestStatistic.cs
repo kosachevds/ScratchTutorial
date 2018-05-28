@@ -8,6 +8,8 @@ namespace ScratchTutorial.Data
         [Key]
         public int Id { get; set; }
 
+        public string USername { get; set; }
+
         public string Title { get; set; }
 
         public TimeSpan Time { get; set; }
