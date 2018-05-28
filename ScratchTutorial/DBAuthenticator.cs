@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using ScratchTutorial.Data;
 
 namespace ScratchTutorial
 {
@@ -6,8 +7,8 @@ namespace ScratchTutorial
     {
         public bool DataIsRight(string username, string password)
         {
-            username = UserData.PrepareUsername(username);
-            password = UserData.PreparePassword(password);
+            username = User.PrepareUsername(username);
+            password = User.PreparePassword(password);
             using (var context = new UserContext())
             {
                 // TODO: prepare data
