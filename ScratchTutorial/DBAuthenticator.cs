@@ -5,6 +5,10 @@ namespace ScratchTutorial
 {
     public class DBAuthenticator : IAuthenticator
     {
+        private string username;
+
+        public string Username => username;
+
         public bool DataIsRight(string username, string password)
         {
             username = User.PrepareUsername(username);

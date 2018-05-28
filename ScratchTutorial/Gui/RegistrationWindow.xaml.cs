@@ -17,6 +17,8 @@ namespace ScratchTutorial.Gui
             this.registrator = registrator;
         }
 
+        public string Username => registrator.Username;
+
         private void Registrate(object sender, RoutedEventArgs e)
         {
             if (!this.pbPassword.Password.Equals(this.pbPasswordRepeat.Password))

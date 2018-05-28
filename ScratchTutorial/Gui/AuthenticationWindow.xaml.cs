@@ -19,6 +19,8 @@ namespace ScratchTutorial.Gui
             #endif
         }
 
+        public string Username => authenticator.Username;
+
         private void Login(object sender, RoutedEventArgs e)
         {
             if (authenticator.DataIsRight(this.tbLogin.Text, this.pbPassword.Password))
