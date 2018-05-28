@@ -2,9 +2,9 @@
 
 namespace ScratchTutorial.Data
 {
-    public class DbContext : System.Data.Entity.DbContext
+    public class TutorialData : System.Data.Entity.DbContext
     {
-        public DbContext() : base("DbConnection") { }
+        public TutorialData() : base("DbConnection") { }
 
         public DbSet<User> Users { get; set; }
 

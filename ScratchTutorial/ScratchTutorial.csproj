@@ -97,7 +97,7 @@
     <Compile Include="Storage.cs" />
     <Compile Include="Testing.cs" />
     <Compile Include="TestStorage.cs" />
-    <Compile Include="Data\DbContext.cs" />
+    <Compile Include="Data\TutorialData.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="XmlHeaderReader.cs" />
     <Compile Include="XmlLesson.cs" />

@@ -11,12 +11,12 @@ namespace ScratchTutorial
         private const int MinUsername = 4;
         private const int MinPassword = 8;
         private const string UsernameRegex = @"[a-z0-9_]+$";
-        private DbContext context;
+        private TutorialData context;
 
         public void Registrate(string username, string password)
         {
             username = User.PrepareUsername(username);
-            using (context = new DbContext())
+            using (context = new TutorialData())
             {
                 if (!UsernameIsValid(username))
                     throw new RegistrationException(Resources.ErrorUsername);

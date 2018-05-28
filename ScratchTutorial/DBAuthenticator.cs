@@ -9,7 +9,7 @@ namespace ScratchTutorial
         {
             username = User.PrepareUsername(username);
             password = User.PreparePassword(password);
-            using (var context = new DbContext())
+            using (var context = new TutorialData())
             {
                 // TODO: prepare data
                 var user = context.Users.FirstOrDefault(u => u.Username.Equals(username));
