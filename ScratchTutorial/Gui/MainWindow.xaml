@@ -5,9 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScratchTutorial"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="WidthAndHeight">
-    <Grid Height="170" Width="250">
-        <Button x:Name="btnLogin" Content="Вход" Height="30" Width="60" Click="btnLogin_Click" Margin="90,20,92,89"/>
-        <Button x:Name="btnRegistrate" Content="Регистрация" Height="30" Width="90" Click="btnRegistrate_Click" Margin="78,55,74,54"/>
-    </Grid>
+        Title="Главное окно" Width="300" Height="300" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="60"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+        <Button Content="Уроки" Click="OpenLessons"/>
+        <Button Content="Тесты" Click="OpenTests"/>
+        <Button Content="Статистика уроков" Width="120" Click="OpenLessonsHistory"/>
+        <Button Content="Статистика тестов" Width="120" Click="OpenTestsHistory"/>
+        <Button Content="Сменить пользователя" Width="140" Click="ChangeUser"/>
+        <Button Content="Выход" Click="CloseApp"/>
+    </StackPanel>
 </Window>
