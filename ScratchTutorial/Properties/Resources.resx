@@ -147,4 +147,7 @@
   <data name="SuccessRegistration" xml:space="preserve">
     <value>Регистрация прошла успешно</value>
   </data>
+  <data name="TitleLoginPopup" xml:space="preserve">
+    <value>Войди или зарегистрируйся</value>
+  </data>
 </root>

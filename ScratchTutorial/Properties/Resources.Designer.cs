@@ -149,5 +149,14 @@ namespace ScratchTutorial.Properties {
                 return ResourceManager.GetString("SuccessRegistration", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Войди или зарегистрируйся.
+        /// </summary>
+        internal static string TitleLoginPopup {
+            get {
+                return ResourceManager.GetString("TitleLoginPopup", resourceCulture);
+            }
+        }
     }
 }
