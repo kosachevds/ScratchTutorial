@@ -1,14 +1,16 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ScratchTutorial.Data
 {
     public class TestStatistic
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public string USername { get; set; }
+        public string Username { get; set; }
 
         public string Title { get; set; }
 
