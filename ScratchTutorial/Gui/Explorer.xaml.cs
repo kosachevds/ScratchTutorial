@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ScratchTutorial.Gui
@@ -26,9 +27,13 @@ namespace ScratchTutorial.Gui
 
         private void Select(object sender, RoutedEventArgs e)
         {
-            var viewer = this.storage.Load(this.lbTitles.SelectedItem.ToString());
+            this.storage.Load(this.lbTitles.SelectedItem.ToString());
+            var viewer = this.storage.CreateViewer();
             this.Hide();
+            var start = DateTime.Now;
             viewer.ShowDialog();
+            var span = DateTime.Now - start;
+            this.storage.StoreToDB(span);
             this.Show();
         }
     }

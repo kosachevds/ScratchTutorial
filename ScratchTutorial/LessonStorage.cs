@@ -9,7 +9,8 @@ namespace ScratchTutorial
     {
         private Dictionary<string, Lesson> lessons;
 
-        public LessonStorage(string path, ILessonReader reader) : base(path, reader)
+        public LessonStorage(string path, ILessonReader reader, string username) 
+            : base(path, reader, username)
         {
             this.lessons = new Dictionary<string, Lesson>();
             CurrentLesson = null;
@@ -17,12 +18,18 @@ namespace ScratchTutorial
 
         public Lesson CurrentLesson { get; private set; }
 
-        public override Window Load(string title) { 
-        
+        public override Window CreateViewer()
+        {
+            return new Gui.LessonViewer(this.CurrentLesson);
+        }
+
+        public override void Load(string title)
+        { 
             if (this.lessons.ContainsKey(title))
             {
                 this.CurrentLesson = this.lessons[title];
-                return new Gui.LessonViewer(this.CurrentLesson);
+                this.CurrentTitle = title;
+                return;
             }
             Lesson lesson = null;
             foreach (var lessonDir in Directory.GetDirectories(this.Path))
@@ -39,29 +46,23 @@ namespace ScratchTutorial
             }
             this.lessons.Add(title, lesson);
             this.CurrentLesson = this.lessons[title];
-            return new Gui.LessonViewer(this.CurrentLesson);
+            this.CurrentTitle = title;
         }
 
-        public Lesson LoadLesson(string title)
+        public override void StoreToDB(TimeSpan span)
         {
-            if (this.lessons.ContainsKey(title))
-                return CurrentLesson = this.lessons[title];
-            var reader = (ILessonReader)this.Reader;
-            Lesson lesson = null;
-            foreach (var lessonDir in Directory.GetDirectories(this.Path))
+            if (!this.CurrentLesson.IsLast)
+                return;
+            using (var db = new Data.TutorialData())
             {
-                if (this.Reader.ReadTitle(lessonDir).Equals(title))
+                db.LessonHistory.Add(new Data.LessonStatistic
                 {
-                    lesson = reader.ReadLesson(lessonDir);
-                    break;
-                }
+                    Time = span,
+                    Title = this.CurrentTitle,
+                    Username = this.Username
+                });
+                db.SaveChanges();
             }
-            if (lesson == null)
-            {
-                throw new ArgumentException("Invalid lesson's title");
-            }
-            this.lessons.Add(title, lesson);
-            return CurrentLesson = this.lessons[title];
         }
     }
 }

@@ -28,7 +28,7 @@ namespace ScratchTutorial
                     throw new RegistrationException(Resources.ErrorAlreadyExists);
                 password = User.PreparePassword(password);
                 context.Users.Add(new User { Username = username, Password = password });
-                context.SaveChangesAsync();
+                context.SaveChanges();
             }
             this.username = username;
         }

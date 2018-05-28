@@ -13,7 +13,7 @@ namespace ScratchTutorial
             this.Reset();
         }
 
-        public uint WrongCount { get; private set; }
+        public int WrongCount { get; private set; }
 
         public int QuestionsCount => this.questions.Length;
 
@@ -26,7 +26,7 @@ namespace ScratchTutorial
         public void Reset()
         {
             this.index = 0u;
-            this.WrongCount = 0u;
+            this.WrongCount = 0;
             this.questions.Shuffle();
         }
 

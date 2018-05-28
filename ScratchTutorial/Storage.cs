@@ -10,10 +10,12 @@ namespace ScratchTutorial
         private List<string> titles;
         private Dictionary<string, string> descriptions;
 
-        protected Storage(string path, IHeaderReader reader)
+        protected Storage(string path, IHeaderReader reader, string username)
         {
-            this.Reader = reader;
             this.Path = path;
+            this.Reader = reader;
+            this.Username = username;
+
             this.descriptions = new Dictionary<string, string>();
             this.titles = new List<string>();
             foreach (var item in Directory.GetDirectories(path))
@@ -22,10 +24,13 @@ namespace ScratchTutorial
             }
         }
 
-
         protected IHeaderReader Reader { get; private set; }
 
         protected string Path { get; }
+
+        protected string CurrentTitle { get; set; }
+
+        protected string Username { get; private set; }
 
         public ReadOnlyCollection<string> Titles => this.titles.AsReadOnly();
 
@@ -50,6 +55,10 @@ namespace ScratchTutorial
             return description;
         }
 
-        public abstract System.Windows.Window Load(string title);
+        public abstract void Load(string title);
+
+        public abstract System.Windows.Window CreateViewer();
+
+        public abstract void StoreToDB(TimeSpan span);
     }
 }
