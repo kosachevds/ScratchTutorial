@@ -13,6 +13,7 @@ namespace ScratchTutorial
         {
             this.answers = answers;
             this.Text = text;
+            this.SingleAnswer = (answers.Count(x => x.Value) == 1);
         }
 
         public string Text { get; }
@@ -30,12 +31,11 @@ namespace ScratchTutorial
             }
         }
 
-        public bool IsRight(string answer)
+        public bool IsRight(params string[] answers)
         {
-            if (!this.answers.ContainsKey(answer))
+            if (this.answers.Count(x => x.Value) != answers.Length)
                 return false;
-            return this.answers[answer];
+            return answers.All(a => this.answers.ContainsKey(a) && this.answers[a]);
         }
-
     }
 }

@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ScratchTutorial.Gui
 {
@@ -30,7 +22,7 @@ namespace ScratchTutorial.Gui
 
         private void LoadPage()
         {
-            var hint = this.lesson.CurrentHint;
+            this.lessonView.Children.Clear();
             var page = this.lesson.CurrentPage;
             foreach (var paragraph in this.lesson.CurrentPage)
             {
@@ -47,7 +39,10 @@ namespace ScratchTutorial.Gui
                     });
                 }
             }
-            // TODO: add Hint
+            if (this.lesson.CurrentHint != null)
+            {
+                AddHintButton(this.lessonView, Path.GetFullPath(this.lesson.CurrentHint));
+            }
             // TODO: counts percents and write to statistic
             this.btnBack.IsEnabled = !this.lesson.IsFirst;
             this.btnForward.IsEnabled = !this.lesson.IsLast;
@@ -63,6 +58,23 @@ namespace ScratchTutorial.Gui
         {
             this.lesson.ToPrevious();
             LoadPage();
+        }
+
+        private static void AddHintButton(StackPanel panel, string path)
+        {
+            var hintButton = new Button
+            {
+                Height = 25,
+                Width = 65,
+                Opacity = 80,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                Content = "Подсказка"
+            };
+            hintButton.Click += (_, __) =>
+            {
+                new HintWindow(path).ShowDialog();
+            };
+            panel.Children.Add(hintButton);
         }
     }
 }

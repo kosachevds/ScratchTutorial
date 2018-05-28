@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 
@@ -18,9 +17,29 @@ namespace ScratchTutorial
 
         public Lesson CurrentLesson { get; private set; }
 
-        public override Window Load(string title)
-        {
-            throw new NotImplementedException();
+        public override Window Load(string title) { 
+        
+            if (this.lessons.ContainsKey(title))
+            {
+                this.CurrentLesson = this.lessons[title];
+                return new Gui.LessonViewer(this.CurrentLesson);
+            }
+            Lesson lesson = null;
+            foreach (var lessonDir in Directory.GetDirectories(this.Path))
+            {
+                if (this.Reader.ReadTitle(lessonDir).Equals(title))
+                {
+                    lesson = ((ILessonReader)this.Reader).ReadLesson(lessonDir);
+                    break;
+                }
+            }
+            if (lesson == null)
+            {
+                throw new ArgumentException("Invalid lesson's title");
+            }
+            this.lessons.Add(title, lesson);
+            this.CurrentLesson = this.lessons[title];
+            return new Gui.LessonViewer(this.CurrentLesson);
         }
 
         public Lesson LoadLesson(string title)

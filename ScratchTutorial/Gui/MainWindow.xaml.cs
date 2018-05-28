@@ -27,8 +27,9 @@ namespace ScratchTutorial.Gui
         private void ShowDialog(Window window)
         {
             window.Owner = this;
-            window.ShowDialog();
+            //window.ShowDialog();
             new Explorer(new LessonStorage(Path.GetFullPath(AppResources.PathLessons), new XmlLesson())).Show();
+            //new Explorer(new TestStorage(Path.GetFullPath(AppResources.PathTests), new XmlTestReader())).Show();
         }
     }
 }

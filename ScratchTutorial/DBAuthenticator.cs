@@ -10,6 +10,7 @@ namespace ScratchTutorial
             password = UserData.PreparePassword(password);
             using (var context = new UserContext())
             {
+                // TODO: prepare data
                 var user = context.Users.FirstOrDefault(u => u.Username.Equals(username));
                 if (user == null)
                     return false;

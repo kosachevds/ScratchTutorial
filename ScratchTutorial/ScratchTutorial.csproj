@@ -68,8 +68,14 @@
     <Compile Include="Gui\Explorer.xaml.cs">
       <DependentUpon>Explorer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gui\HintWindow.xaml.cs">
+      <DependentUpon>HintWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gui\LessonViewer.xaml.cs">
       <DependentUpon>LessonViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\TestViewer.xaml.cs">
+      <DependentUpon>TestViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="IAuthenticator.cs" />
     <Compile Include="IHeaderReader.cs" />
@@ -77,6 +83,7 @@
     <Compile Include="IRegistrator.cs" />
     <Compile Include="DBRegistrator.cs" />
     <Compile Include="DBAuthenticator.cs" />
+    <Compile Include="ITestReader.cs" />
     <Compile Include="Lesson.cs" />
     <Compile Include="LessonStorage.cs" />
     <Compile Include="Paragraph.cs" />
@@ -87,14 +94,21 @@
     </Compile>
     <Compile Include="Storage.cs" />
     <Compile Include="Testing.cs" />
+    <Compile Include="TestStorage.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="UserData.cs" />
+    <Compile Include="XmlHeaderReader.cs" />
     <Compile Include="XmlLesson.cs" />
+    <Compile Include="XmlTestReader.cs" />
     <Page Include="Gui\AuthenticationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gui\Explorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\HintWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,6 +132,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Gui\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\TestViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

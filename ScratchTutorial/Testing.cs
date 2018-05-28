@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace ScratchTutorial
 {
     public class Testing
     {
         private Question[] questions;
-        private uint wrongCount;
         private uint index;
 
         public Testing(Question[] questions)
@@ -17,6 +12,10 @@ namespace ScratchTutorial
             this.questions = questions;
             this.Reset();
         }
+
+        public uint WrongCount { get; private set; }
+
+        public int QuestionsCount => this.questions.Length;
 
         public Question Current => this.questions[this.index];
 
@@ -27,7 +26,7 @@ namespace ScratchTutorial
         public void Reset()
         {
             this.index = 0u;
-            this.wrongCount = 0u;
+            this.WrongCount = 0u;
             this.questions.Shuffle();
         }
 
@@ -45,6 +44,14 @@ namespace ScratchTutorial
                 return false;
             --this.index;
             return false;
+        }
+
+        public bool Answer(params string[] answers)
+        {
+            var isRight = this.Current.IsRight(answers);
+            if (!isRight)
+                ++this.WrongCount;
+            return isRight;
         }
     }
 }
