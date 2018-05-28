@@ -73,8 +73,14 @@
     <Compile Include="Gui\HintWindow.xaml.cs">
       <DependentUpon>HintWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gui\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gui\LessonViewer.xaml.cs">
       <DependentUpon>LessonViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\LoginPopUp.xaml.cs">
+      <DependentUpon>LoginPopUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gui\TestViewer.xaml.cs">
       <DependentUpon>TestViewer.xaml</DependentUpon>
@@ -114,7 +120,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Gui\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gui\LessonViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\LoginPopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

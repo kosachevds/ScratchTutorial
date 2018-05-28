@@ -1,0 +1,13 @@
+﻿<Window x:Class="ScratchTutorial.Gui.LoginPopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScratchTutorial"
+        mc:Ignorable="d"
+        Height="170" Width="250" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+        <Button x:Name="btnLogin" Content="Вход" Height="30" Width="60" Click="Authentication" Margin="0,0,0,10"/>
+        <Button x:Name="btnRegistrate" Content="Регистрация" Height="30" Width="90" Click="Registration"/>
+    </StackPanel>
+</Window>
