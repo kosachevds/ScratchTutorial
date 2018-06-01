@@ -8,8 +8,8 @@
         mc:Ignorable="d" Height="500" Width="800" >
     <DockPanel Margin="10">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button x:Name="btnOk" Width="60" Height="25" Margin="0,0,10,0" Content="Выбрать" IsEnabled="False" Click="Select"/>
-            <Button x:Name="btnBack" Width="60" Height="25" Content="Назад" Click="ReturnBack"/>
+            <Button x:Name="btnOk" Width="70" Height="28" Margin="0,0,10,0" Content="Выбрать" IsEnabled="False" Click="Select"/>
+            <Button x:Name="btnBack" Width="70" Height="28" Content="Назад" Click="ReturnBack"/>
         </StackPanel>
         <Grid Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
