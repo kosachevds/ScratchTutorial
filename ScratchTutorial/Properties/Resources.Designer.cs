@@ -223,6 +223,15 @@ namespace ScratchTutorial.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Личный кабинет.
+        /// </summary>
+        public static string TitleTeacher {
+            get {
+                return ResourceManager.GetString("TitleTeacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Тестирование.
         /// </summary>
         public static string TitleTest {

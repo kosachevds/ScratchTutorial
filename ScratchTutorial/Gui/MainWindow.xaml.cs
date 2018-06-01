@@ -36,11 +36,9 @@ namespace ScratchTutorial.Gui
         
         private void OpenPopup(object sender, RoutedEventArgs e)
         {
-            //this.username = LoginWindow();
-            //if (this.username == null)
-            //    this.Close();
-            OpenLessons(null, null);
-
+            this.username = LoginWindow();
+            if (this.username == null)
+                this.Close();
         }
 
         private void OpenLessons(object sender, RoutedEventArgs e)
