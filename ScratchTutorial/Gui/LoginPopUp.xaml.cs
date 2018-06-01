@@ -1,11 +1,12 @@
 ﻿using System.Windows;
+using MahApps.Metro.Controls;
 
 namespace ScratchTutorial.Gui
 {
     /// <summary>
     /// Interaction logic for LoginPopUp.xaml
     /// </summary>
-    public partial class LoginPopUp : Window
+    public partial class LoginPopUp : MetroWindow
     {
         public LoginPopUp()
         {

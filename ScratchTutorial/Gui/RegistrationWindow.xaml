@@ -1,10 +1,11 @@
-﻿<Window x:Class="ScratchTutorial.Gui.RegistrationWindow"
+﻿<Controls:MetroWindow x:Class="ScratchTutorial.Gui.RegistrationWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScratchTutorial"
         mc:Ignorable="d"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="Registration" Height="250" Width="230" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <StackPanel Orientation="Vertical">
@@ -22,4 +23,4 @@
         </StackPanel>
         <Button x:Name="btnRegistrate" Width="100" Height="30" Content="ОК" Margin="10" Click="Registrate"/>
     </StackPanel>
-</Window>
+</Controls:MetroWindow>

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using MahApps.Metro.Controls;
 
 namespace ScratchTutorial.Gui
 {
     /// <summary>
     /// Interaction logic for TestViewer.xaml
     /// </summary>
-    public partial class TestViewer : Window
+    public partial class TestViewer : MetroWindow
     {
         private Testing test;
         private Dictionary<string, ToggleButton> answers;

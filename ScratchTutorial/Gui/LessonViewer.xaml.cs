@@ -3,13 +3,14 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using MahApps.Metro.Controls;
 
 namespace ScratchTutorial.Gui
 {
     /// <summary>
     /// Interaction logic for LessonViewer.xaml
     /// </summary>
-    public partial class LessonViewer : Window
+    public partial class LessonViewer : MetroWindow
     {
         private Lesson lesson;
 

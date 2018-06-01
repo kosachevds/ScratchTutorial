@@ -1,11 +1,12 @@
 ﻿using System.Windows;
+using MahApps.Metro.Controls;
 
 namespace ScratchTutorial.Gui
 {
     /// <summary>
     /// Interaction logic for Authentication.xaml
     /// </summary>
-    public partial class AuthenticationWindow : Window
+    public partial class AuthenticationWindow : MetroWindow
     {
         private IAuthenticator authenticator;
 

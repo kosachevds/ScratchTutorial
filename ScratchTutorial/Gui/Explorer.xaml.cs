@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using MahApps.Metro.Controls;
 
 namespace ScratchTutorial.Gui
 {
     /// <summary>
     /// Interaction logic for Explorer.xaml
     /// </summary>
-    public partial class Explorer : Window
+    public partial class Explorer : MetroWindow
     {
         private Storage storage;
 

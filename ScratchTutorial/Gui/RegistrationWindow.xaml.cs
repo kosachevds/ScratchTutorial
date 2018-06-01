@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using MahApps.Metro.Controls;
 using AppResources = ScratchTutorial.Properties.Resources;
 
 namespace ScratchTutorial.Gui
@@ -7,7 +8,7 @@ namespace ScratchTutorial.Gui
     /// <summary>
     /// Interaction logic for Registration.xaml
     /// </summary>
-    public partial class RegistrationWindow : Window
+    public partial class RegistrationWindow : MetroWindow
     {
         private IRegistrator registrator;
 

@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using System.Windows;
+using MahApps.Metro.Controls;
 
 namespace ScratchTutorial.Gui
 {
-    public partial class History : Window
+    public partial class History : MetroWindow
     {
         private History()
         {

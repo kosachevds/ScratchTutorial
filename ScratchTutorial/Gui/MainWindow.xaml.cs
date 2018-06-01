@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Windows;
+using MahApps.Metro.Controls;
 using AppResources = ScratchTutorial.Properties.Resources;
 
 namespace ScratchTutorial.Gui
@@ -7,7 +8,7 @@ namespace ScratchTutorial.Gui
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         private string username;
 
