@@ -5,20 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScratchTutorial.Gui"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        mc:Ignorable="d"
-        SizeToContent="WidthAndHeight">
-    <DockPanel Height="500" Width="600" Margin="10">
+        mc:Ignorable="d" Height="500" Width="800" >
+    <DockPanel Margin="10">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button x:Name="btnOk" Width="60" Height="25" Margin="0,0,10,0" Content="Выбрать" IsEnabled="False" Click="Select"/>
-            <Button x:Name="btnBack" Width="60" Height="25" Content="Назад"/>
+            <Button x:Name="btnBack" Width="60" Height="25" Content="Назад" Click="ReturnBack"/>
         </StackPanel>
         <Grid Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="lbTitles" Grid.Column="0" SelectionChanged="TitleChanged"/>
-            <TextBlock x:Name="tbDescription" Grid.Column="1" TextWrapping="Wrap"/>
+            <ListBox x:Name="lbTitles" Grid.Column="0" SelectionChanged="TitleChanged" BorderThickness="0,0,2,0"/>
+            <TextBlock x:Name="tbDescription" Grid.Column="1" Margin="10,0,0,0" TextWrapping="Wrap"/>
         </Grid>
     </DockPanel>
 </Controls:MetroWindow>

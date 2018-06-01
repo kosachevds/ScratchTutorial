@@ -26,24 +26,35 @@ namespace ScratchTutorial.Gui
             if (withHide)
                 this.Show();
         }
-        
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void ShowHideWait(Window window)
         {
-            this.username = LoginWindow();
+            window.Owner = this;
+                this.Hide();
+            window.Closed += (_, __) => this.Show();
+            window.Show();
+        }
+        
+        private void OpenPopup(object sender, RoutedEventArgs e)
+        {
+            //this.username = LoginWindow();
+            //if (this.username == null)
+            //    this.Close();
+            OpenLessons(null, null);
+
         }
 
         private void OpenLessons(object sender, RoutedEventArgs e)
         {
             var storage = new LessonStorage(Path.GetFullPath(AppResources.PathLessons),
                                             new XmlLesson(), this.username);
-            ShowDialog(new Explorer(storage));
+            ShowHideWait(new Explorer(storage));
         }
 
         private void OpenTests(object sender, RoutedEventArgs e)
         {
             var storage = new TestStorage(Path.GetFullPath(AppResources.PathTests),
                                           new XmlTestReader(), this.username);
-            ShowDialog(new Explorer(storage));
+            ShowHideWait(new Explorer(storage));
         }
 
         private void OpenLessonsHistory(object sender, RoutedEventArgs e)
@@ -58,7 +69,7 @@ namespace ScratchTutorial.Gui
 
         private void ChangeUser(object sender, RoutedEventArgs e)
         {
-            this.username = LoginWindow();
+            this.username = LoginWindow() ?? this.username;
         }
 
         private void CloseApp(object sender, RoutedEventArgs e)

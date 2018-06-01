@@ -7,21 +7,23 @@
         xmlns:properties="clr-namespace:ScratchTutorial.Properties"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="{x:Static properties:Resources.TitleMain}" Width="300" Height="300" Loaded="Window_Loaded">
+        Title="{x:Static properties:Resources.TitleMain}"
+        Width="300" Height="300" Loaded="OpenPopup" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
             <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="0,0,0,10"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Width" Value="60"/>
+            <Setter Property="FontSize" Value="11" />
         </Style>
     </Window.Resources>
     <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
         <Button Content="Уроки" Click="OpenLessons"/>
         <Button Content="Тесты" Click="OpenTests"/>
-        <Button Content="Статистика уроков" Width="120" Click="OpenLessonsHistory"/>
-        <Button Content="Статистика тестов" Width="120" Click="OpenTestsHistory"/>
-        <Button Content="Сменить пользователя" Width="140" Click="ChangeUser"/>
+        <Button Content="Статистика уроков" Width="140" Click="OpenLessonsHistory"/>
+        <Button Content="Статистика тестов" Width="140" Click="OpenTestsHistory"/>
+        <Button Content="Сменить пользователя" Width="160" Click="ChangeUser"/>
         <Button Content="Выход" Click="CloseApp"/>
     </StackPanel>
 </Controls:MetroWindow>

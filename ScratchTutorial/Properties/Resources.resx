@@ -138,6 +138,9 @@
   <data name="ErrorUsername" xml:space="preserve">
     <value>Имя пользователя имеет неверный формат</value>
   </data>
+  <data name="HintButton" xml:space="preserve">
+    <value>Подсказка</value>
+  </data>
   <data name="PathLessons" xml:space="preserve">
     <value>..\\..\\Lessons</value>
   </data>

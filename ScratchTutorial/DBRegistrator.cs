@@ -35,7 +35,7 @@ namespace ScratchTutorial
 
         private static bool UsernameIsValid(string username)
         {
-            if (username.Length < MinPassword)
+            if (username.Length < MinUsername)
                 return false;
             if (Char.IsDigit(username.First()))
                 return false;

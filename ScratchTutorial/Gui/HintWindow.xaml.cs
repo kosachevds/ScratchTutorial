@@ -12,7 +12,12 @@ namespace ScratchTutorial.Gui
         public HintWindow(string fullpath)
         {
             InitializeComponent();
-            this.image.Source = new BitmapImage(new Uri(fullpath));
+            var bm = new BitmapImage(new Uri(fullpath));
+            this.image.Source = bm;
+            this.Height = bm.PixelHeight + 10;
+            this.Width = bm.PixelWidth + 10;
+    
+            // TODO dynamic resize on init
         }
     }
 }

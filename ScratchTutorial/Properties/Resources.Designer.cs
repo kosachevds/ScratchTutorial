@@ -124,6 +124,15 @@ namespace ScratchTutorial.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Подсказка.
+        /// </summary>
+        public static string HintButton {
+            get {
+                return ResourceManager.GetString("HintButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ..\\..\\Lessons.
         /// </summary>
         public static string PathLessons {

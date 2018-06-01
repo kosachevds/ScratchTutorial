@@ -7,11 +7,11 @@
         xmlns:properties="clr-namespace:ScratchTutorial.Properties"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="{x:Static properties:Resources.TitleLessonViewer}" SizeToContent="WidthAndHeight">
-    <DockPanel Height="500" Width="500">
+        Title="{x:Static properties:Resources.TitleLessonViewer}" Height="500" Width="800">
+    <DockPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10,0,10,10">
-            <Button x:Name="btnForward" Height="25" Width="75" Margin="0,0,10,0" Content="Далее" Click="NextPage"/>
-            <Button x:Name="btnBack" Height="25" Width="75" Content="Назад" IsEnabled="False" Click="btnBack_Click"/>
+            <Button x:Name="btnForward" Height="28" Width="75" Margin="0,0,10,0" Content="Далее" Click="NextPage"/>
+            <Button x:Name="btnBack" Height="28" Width="75" Content="Назад" IsEnabled="False" Click="btnBack_Click"/>
         </StackPanel>
         <ScrollViewer Margin="5,5,0,5" HorizontalAlignment="Stretch">
             <StackPanel x:Name="lessonView" />

@@ -30,13 +30,18 @@ namespace ScratchTutorial.Gui
                 this.lessonView.Children.Add(new TextBlock
                 {
                     TextWrapping = TextWrapping.Wrap,
-                    Text = paragraph.Text
+                    Text = paragraph.Text,
+                    FontSize = 14
                 });
                 if (paragraph.Image != null)
                 {
+                    var image = new BitmapImage(new Uri(paragraph.Image));
+
                     this.lessonView.Children.Add(new Image
                     {
-                        Source = new BitmapImage(new Uri(paragraph.Image))
+                        Source = image,
+                        MaxWidth = image.PixelWidth,
+                        MaxHeight = image.PixelHeight
                     });
                 }
             }
@@ -65,11 +70,11 @@ namespace ScratchTutorial.Gui
         {
             var hintButton = new Button
             {
-                Height = 25,
-                Width = 65,
-                Opacity = 80,
+                Height = 28,
+                Width = 90,
+                Opacity = 0.5,
                 HorizontalAlignment = HorizontalAlignment.Left,
-                Content = "Подсказка"
+                Content = Properties.Resources.HintButton
             };
             hintButton.Click += (_, __) =>
             {

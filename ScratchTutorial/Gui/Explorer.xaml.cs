@@ -17,6 +17,8 @@ namespace ScratchTutorial.Gui
             InitializeComponent();
             this.storage = storage;
             this.lbTitles.ItemsSource = this.storage.Titles;
+            this.lbTitles.FontSize = 14;
+            this.tbDescription.FontSize = 15;
         }
 
         private void TitleChanged(object sender, SelectionChangedEventArgs e)
@@ -36,6 +38,11 @@ namespace ScratchTutorial.Gui
             var span = DateTime.Now - start;
             this.storage.StoreToDB(span);
             this.Show();
+        }
+
+        private void ReturnBack(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
