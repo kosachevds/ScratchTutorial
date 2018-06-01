@@ -160,6 +160,15 @@ namespace ScratchTutorial.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Твой результат: {0} правильных ответов из {1}..
+        /// </summary>
+        public static string TemplateResult {
+            get {
+                return ResourceManager.GetString("TemplateResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Авторизация.
         /// </summary>
         public static string TitleAuthentication {

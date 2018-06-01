@@ -7,10 +7,13 @@
         xmlns:properties="clr-namespace:ScratchTutorial.Properties"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="{x:Static properties:Resources.TitleTest}" Height="332.291" Width="321.875">
+        Title="{x:Static properties:Resources.TitleTest}" Height="350" Width="500">
     <DockPanel Margin="10">
-        <TextBlock x:Name="tbQuestion" DockPanel.Dock="Top" Margin="0,0,0,10" TextWrapping="Wrap"/>
-        <Button x:Name="btnOk" DockPanel.Dock="Bottom" Height="22" Width="65" HorizontalAlignment="Right" Content="OK" IsEnabled="False" Click="Answer"/>
+        <TextBlock x:Name="tbQuestion" DockPanel.Dock="Top" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="14"/>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical">
+            <Button x:Name="btnOk" Height="28" Width="70" HorizontalAlignment="Left" Content="OK" IsEnabled="False" Click="Answer"/>
+            <Button x:Name="btnExit" Height="28" Width="70" HorizontalAlignment="Right" Content="Выход" Click="ExitTest" Visibility="Collapsed"/>
+        </StackPanel>
         <StackPanel x:Name="spAnswers" Margin="0,0,0,5" />
     </DockPanel>
 </Controls:MetroWindow>

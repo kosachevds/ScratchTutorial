@@ -150,6 +150,9 @@
   <data name="SuccessRegistration" xml:space="preserve">
     <value>Регистрация прошла успешно</value>
   </data>
+  <data name="TemplateResult" xml:space="preserve">
+    <value>Твой результат: {0} правильных ответов из {1}.</value>
+  </data>
   <data name="TitleAuthentication" xml:space="preserve">
     <value>Авторизация</value>
   </data>

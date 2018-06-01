@@ -14,7 +14,7 @@ namespace ScratchTutorial.Gui
     public partial class TestViewer : MetroWindow
     {
         private Testing test;
-        private Dictionary<string, ToggleButton> answers;
+        private List<ToggleButton> answerButtons;
 
         public TestViewer(Testing test)
         {
@@ -29,42 +29,41 @@ namespace ScratchTutorial.Gui
             var currentAnswers = current.Answers;
 
             this.tbQuestion.Text = current.Text;
-            this.answers = LoadAnswers(currentAnswers, current.SingleAnswer);
-            foreach (var item in this.answers)
+            this.answerButtons = LoadAnswers(currentAnswers, current.SingleAnswer);
+            foreach (var item in this.answerButtons)
             {
-                item.Value.Checked += (_, __) => { if (!btnOk.IsEnabled) btnOk.IsEnabled = true; };
-                var panel = new StackPanel { Orientation = Orientation.Horizontal };
-                panel.Children.Add(item.Value);
-                panel.Children.Add(new TextBlock { Text = item.Key });
-                this.spAnswers.Children.Add(panel);
+                item.Checked += (_, __) => { if (!btnOk.IsEnabled) btnOk.IsEnabled = true; };
+                this.spAnswers.Children.Add(item);
             }
         }
 
-        private static Dictionary<string, ToggleButton> LoadAnswers(string[] textAnswers, bool singleAnswer)
+        private static List<ToggleButton> LoadAnswers(string[] textAnswers, bool singleAnswer)
         {
-            var answers = new Dictionary<string, ToggleButton>();
-            if (singleAnswer)
+            var answers = new List<ToggleButton>();
+            foreach (var answer in textAnswers)
             {
-                foreach (var answer in textAnswers)
+                ToggleButton button;
+                if (singleAnswer)
                 {
-                    answers.Add(answer, new RadioButton { GroupName = "answers" });
+                    button = new RadioButton { GroupName = "answers" };
                 }
-            }
-            else
-            {
-                foreach (var answer in textAnswers)
+                else
                 {
-                    answers.Add(answer, new CheckBox());
+                    button = new CheckBox();
                 }
+                button.Content = answer;
+                button.FontSize = 13;
+                button.Margin = new Thickness(0, 0, 0, 5);
+                answers.Add(button);
             }
             return answers;
         }
         
         private void Answer(object sender, RoutedEventArgs e)
         {
-            this.test.Answer(this.answers
-                                 .Where(x => (bool)x.Value.IsChecked)
-                                 .Select(x => x.Key)
+            this.test.Answer(this.answerButtons
+                                 .Where(x => (bool)x.IsChecked)
+                                 .Select(x => (string)x.Content)
                                  .ToArray());
             if (!this.test.ToNext())
             {
@@ -80,16 +79,24 @@ namespace ScratchTutorial.Gui
 
         private void EndTesting()
         {
+            this.tbQuestion.Text = String.Empty;
             this.spAnswers.Children.Clear();
             this.btnOk.Visibility = Visibility.Collapsed;
+            this.btnExit.Visibility = Visibility.Visible;
             this.spAnswers.Children.Add(new TextBlock
             {
                 TextWrapping = TextWrapping.Wrap,
-                Text = String.Format("Твой результат: {0} правильных ответов из {1}.",
+                FontSize = 15,
+                Text = String.Format(Properties.Resources.TemplateResult,
                                      this.test.QuestionsCount - this.test.WrongCount,
                                      this.test.QuestionsCount)
 
             });
+        }
+
+        private void ExitTest(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
