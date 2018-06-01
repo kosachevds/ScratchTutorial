@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScratchTutorial"
+        xmlns:properties="clr-namespace:ScratchTutorial.Properties"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
+        Title="{x:Static properties:Resources.TitleLoginPopup}"
         Height="170" Width="250" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
         <Button x:Name="btnLogin" Content="Вход" Height="30" Width="60" Click="Authentication" Margin="0,0,0,10"/>

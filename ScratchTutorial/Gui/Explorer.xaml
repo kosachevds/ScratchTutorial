@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ScratchTutorial.Gui"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Explorer" SizeToContent="WidthAndHeight">
+        SizeToContent="WidthAndHeight">
     <DockPanel Height="500" Width="600" Margin="10">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button x:Name="btnOk" Width="60" Height="25" Margin="0,0,10,0" Content="Выбрать" IsEnabled="False" Click="Select"/>

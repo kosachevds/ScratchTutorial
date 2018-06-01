@@ -147,7 +147,28 @@
   <data name="SuccessRegistration" xml:space="preserve">
     <value>Регистрация прошла успешно</value>
   </data>
+  <data name="TitleAuthentication" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="TitleHint" xml:space="preserve">
+    <value>Подсказка</value>
+  </data>
+  <data name="TitleHistory" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="TitleLessonViewer" xml:space="preserve">
+    <value>Урок</value>
+  </data>
   <data name="TitleLoginPopup" xml:space="preserve">
-    <value>Войди или зарегистрируйся</value>
+    <value>Войди/зарегистрируйся</value>
+  </data>
+  <data name="TitleMain" xml:space="preserve">
+    <value>Главное меню</value>
+  </data>
+  <data name="TitleRegistration" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="TitleTest" xml:space="preserve">
+    <value>Тестирование</value>
   </data>
 </root>

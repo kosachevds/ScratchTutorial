@@ -22,7 +22,7 @@ namespace ScratchTutorial.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ScratchTutorial.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ScratchTutorial.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace ScratchTutorial.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Ошибка.
         /// </summary>
-        internal static string Error {
+        public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Пользователь с таким именем уже зарегистрирован.
         /// </summary>
-        internal static string ErrorAlreadyExists {
+        public static string ErrorAlreadyExists {
             get {
                 return ResourceManager.GetString("ErrorAlreadyExists", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Ошибка.
         /// </summary>
-        internal static string ErrorMessage {
+        public static string ErrorMessage {
             get {
                 return ResourceManager.GetString("ErrorMessage", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Пароли не совпадают.
         /// </summary>
-        internal static string ErrorPasswords {
+        public static string ErrorPasswords {
             get {
                 return ResourceManager.GetString("ErrorPasswords", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Пароль слишком короткий.
         /// </summary>
-        internal static string ErrorShortPassword {
+        public static string ErrorShortPassword {
             get {
                 return ResourceManager.GetString("ErrorShortPassword", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Данные пользователя не верны.
         /// </summary>
-        internal static string ErrorUserData {
+        public static string ErrorUserData {
             get {
                 return ResourceManager.GetString("ErrorUserData", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Имя пользователя имеет неверный формат.
         /// </summary>
-        internal static string ErrorUsername {
+        public static string ErrorUsername {
             get {
                 return ResourceManager.GetString("ErrorUsername", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to ..\\..\\Lessons.
         /// </summary>
-        internal static string PathLessons {
+        public static string PathLessons {
             get {
                 return ResourceManager.GetString("PathLessons", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to ..\\..\\Tests.
         /// </summary>
-        internal static string PathTests {
+        public static string PathTests {
             get {
                 return ResourceManager.GetString("PathTests", resourceCulture);
             }
@@ -144,18 +144,81 @@ namespace ScratchTutorial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Регистрация прошла успешно.
         /// </summary>
-        internal static string SuccessRegistration {
+        public static string SuccessRegistration {
             get {
                 return ResourceManager.GetString("SuccessRegistration", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Войди или зарегистрируйся.
+        ///   Looks up a localized string similar to Авторизация.
         /// </summary>
-        internal static string TitleLoginPopup {
+        public static string TitleAuthentication {
+            get {
+                return ResourceManager.GetString("TitleAuthentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Подсказка.
+        /// </summary>
+        public static string TitleHint {
+            get {
+                return ResourceManager.GetString("TitleHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Статистика.
+        /// </summary>
+        public static string TitleHistory {
+            get {
+                return ResourceManager.GetString("TitleHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Урок.
+        /// </summary>
+        public static string TitleLessonViewer {
+            get {
+                return ResourceManager.GetString("TitleLessonViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Войди/зарегистрируйся.
+        /// </summary>
+        public static string TitleLoginPopup {
             get {
                 return ResourceManager.GetString("TitleLoginPopup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Главное меню.
+        /// </summary>
+        public static string TitleMain {
+            get {
+                return ResourceManager.GetString("TitleMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрация.
+        /// </summary>
+        public static string TitleRegistration {
+            get {
+                return ResourceManager.GetString("TitleRegistration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тестирование.
+        /// </summary>
+        public static string TitleTest {
+            get {
+                return ResourceManager.GetString("TitleTest", resourceCulture);
             }
         }
     }

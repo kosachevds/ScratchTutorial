@@ -11,7 +11,6 @@ namespace ScratchTutorial.Gui
         public LoginPopUp()
         {
             InitializeComponent();
-            this.Title = Properties.Resources.TitleLoginPopup;
         }
 
         public string Username { get; private set; }

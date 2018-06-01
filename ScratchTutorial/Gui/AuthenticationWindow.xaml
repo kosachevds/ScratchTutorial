@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScratchTutorial"
+        xmlns:properties="clr-namespace:ScratchTutorial.Properties"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Authentication" Height="202" Width="228" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        Title="{x:Static properties:Resources.TitleAuthentication}" 
+        Height="202" Width="228" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal" Margin="10,30,0,10">
             <Label Content="Логин" Width="60"/>

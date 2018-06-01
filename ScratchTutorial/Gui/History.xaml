@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:ScratchTutorial.Properties"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:ScratchTutorial.Gui"
         mc:Ignorable="d"
-        Title="History" Height="300" Width="300">
+        Title="{x:Static properties:Resources.TitleHistory}" Height="300" Width="300">
     <DockPanel Margin="10,10,0,10">
         <DataGrid x:Name="table" />
         <!--<FlowDocumentScrollViewer>
