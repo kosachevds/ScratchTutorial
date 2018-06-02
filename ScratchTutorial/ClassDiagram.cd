@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ScratchTutorial.DBAuthenticator">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DBAuthenticator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ScratchTutorial.DBRegistrator">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAIAAQAAAAEAAABAAAAAAAAAAAgAAAQ=</HashCode>
+      <FileName>DBRegistrator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ScratchTutorial.Storage">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAQAAgCEIAIQAAAAAAAAAAAAIAABAAAAAAAAA=</HashCode>
+      <FileName>Storage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScratchTutorial.LessonStorage">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAAAAAAgAAAAAAAAAAAAAAAAABIAAAAAAAAAAAA=</HashCode>
+      <FileName>LessonStorage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScratchTutorial.TestStorage">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgBAAAAAgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>TestStorage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScratchTutorial.XmlHeaderReader">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAQAACAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>XmlHeaderReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ScratchTutorial.XmlLesson">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAADAAAAEAAAAAAAAAAAACAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>XmlLesson.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ScratchTutorial.XmlTestReader">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAQEAAAgAAAAAAAAAQABAAAAAAA=</HashCode>
+      <FileName>XmlTestReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ScratchTutorial.IAuthenticator">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IAuthenticator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ScratchTutorial.IHeaderReader">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IHeaderReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ScratchTutorial.ILessonReader" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ILessonReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ScratchTutorial.IRegistrator">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>IRegistrator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ScratchTutorial.ITestReader" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>ITestReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
