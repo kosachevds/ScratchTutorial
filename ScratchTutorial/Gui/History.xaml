@@ -7,13 +7,41 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:ScratchTutorial.Gui"
         mc:Ignorable="d"
-        Title="{x:Static properties:Resources.TitleHistory}" Height="300" Width="300">
+        Title="{x:Static properties:Resources.TitleHistory}" Height="300" Width="500">
     <DockPanel Margin="10,10,0,10">
-        <DataGrid x:Name="table" />
-        <!--<FlowDocumentScrollViewer>
-            <FlowDocument>
-                <Table x:Name="FlowTable"/>
-            </FlowDocument>
-        </FlowDocumentScrollViewer>-->
+        <ScrollViewer>
+            <StackPanel>
+                <DataGrid x:Name="tableTests" AutoGenerateColumns="False">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="FontWeight" Value="DemiBold" />
+                            <Setter Property="Padding" Value="3" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" Width="25" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header="Пользователь" Width="90" Binding="{Binding Username}"/>
+                        <DataGridTextColumn Header="Заголовок" Width="90" Binding="{Binding Title}"/>
+                        <DataGridTextColumn Header="Время прохождения" Width="130" Binding="{Binding Time}"/>
+                        <DataGridTextColumn Header="Верных ответов" Width="100" Binding="{Binding RightCount}"/>
+                        <DataGridTextColumn Header="Всего ответов" Width="90" Binding="{Binding Amount}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid x:Name="tableLessons">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="FontWeight" Value="DemiBold" />
+                            <Setter Property="Padding" Value="3" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" Width="25" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header="Пользователь" Width="90" Binding="{Binding Username}"/>
+                        <DataGridTextColumn Header="Заголовок" Width="90" Binding="{Binding Title}"/>
+                        <DataGridTextColumn Header="Время прохождения" Width="130" Binding="{Binding Time}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </ScrollViewer>
     </DockPanel>
 </Controls:MetroWindow>
